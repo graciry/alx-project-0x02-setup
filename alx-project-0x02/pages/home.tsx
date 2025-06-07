@@ -1,24 +1,38 @@
-import Header from "@/components/layout/Header";
+import { useState } from "react";
 import Card from "@/components/common/Card";
+import PostModal from "@/components/common/PostModal";
+import { type CardProps } from "@/interfaces";
 
 export default function HomePage() {
+  const [posts, setPosts] = useState<CardProps[]>([]);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleAddPost = (title: string, content: string) => {
+    setPosts((prev) => [...prev, { title, content }]);
+  };
+
   return (
-    <>
-      <Header />
-      <main className="flex flex-col items-center justify-center min-h-screen gap-6 bg-green-50 p-8">
-        <Card
-          title="Welcome to ALX"
-          content="This project demonstrates basic routing and component reuse with Next.js and TypeScript."
-        />
-        <Card
-          title="Reusable Components"
-          content="This Card component is reusable and accepts props for dynamic content."
-        />
-        <Card
-          title="Powered by Tailwind"
-          content="Styled with Tailwind CSS for a modern and responsive layout."
-        />
-      </main>
-    </>
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Home Page</h1>
+
+      <button
+        onClick={() => setModalOpen(true)}
+        className="mb-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+      >
+        Add Post
+      </button>
+
+      <PostModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        onSubmit={handleAddPost}
+      />
+
+      <div className="grid gap-4">
+        {posts.map((post, index) => (
+          <Card key={index} title={post.title} content={post.content} />
+        ))}
+      </div>
+    </div>
   );
 }
