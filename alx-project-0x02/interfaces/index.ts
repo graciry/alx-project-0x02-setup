@@ -26,3 +26,14 @@ export interface PostProps {
   content: string; // We'll map API 'body' to 'content' when fetching
 }
 
+export interface UserProps {
+  id: number;
+  name: string;
+  email: string;
+  address: {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
+  };
+}
