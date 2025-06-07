@@ -19,4 +19,10 @@ export interface PostModalProps {
   onSubmit: (title: string, content: string) => void;
   onClose: () => void;
 }
+// interfaces/index.ts
+export interface PostProps {
+  userId: number;
+  title: string;
+  content: string; // We'll map API 'body' to 'content' when fetching
+}
 
