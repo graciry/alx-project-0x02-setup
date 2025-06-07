@@ -24,5 +24,5 @@ The goal is to provide a clean, well-structured codebase that follows best pract
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/alx-project-0x02-setup.git
+   git clone https://github.com/graciry/alx-project-0x02-setup.git
    cd alx-project-0x02-setup
