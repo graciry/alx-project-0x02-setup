@@ -1,12 +1,14 @@
-import Header from "@/components/layout/Header";
+import Button from "@/components/common/Button";
 
 export default function AboutPage() {
   return (
-    <>
-      <Header />
-      <main className="flex items-center justify-center min-h-screen bg-yellow-100">
-        <h1 className="text-3xl font-bold text-yellow-700">About This Project</h1>
-      </main>
-    </>
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-6">About Page</h1>
+      <div className="flex gap-4 flex-wrap">
+        <Button label="Small Rounded-sm" size="small" shape="rounded-sm" />
+        <Button label="Medium Rounded-md" size="medium" shape="rounded-md" />
+        <Button label="Large Rounded-full" size="large" shape="rounded-full" />
+      </div>
+    </div>
   );
 }
