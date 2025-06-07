@@ -15,4 +15,8 @@ export interface ButtonProps {
   shape?: "rounded-sm" | "rounded-md" | "rounded-full";
   onClick?: () => void;
 }
+export interface PostModalProps {
+  onSubmit: (title: string, content: string) => void;
+  onClose: () => void;
+}
 
